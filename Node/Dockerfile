@@ -2,10 +2,11 @@ FROM node
 
 WORKDIR /app
 
-COPY index.js index.js
+RUN npm install 
+
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 
-RUN npm install 
+COPY index.js index.js
 
 CMD [ "node", "index.js" ]
