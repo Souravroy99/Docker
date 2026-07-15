@@ -12,15 +12,16 @@
 # CMD [ "node", "index.js" ]
 
 
+
 # # # # More optimized version: 
 
 FROM node
 
 WORKDIR /app
 
-RUN npm install
 
 COPY package*.json .
 COPY . . 
+RUN npm install
 
 CMD [ "node", "index.js" ]
