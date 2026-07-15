@@ -1,12 +1,26 @@
+# FROM node
+
+# WORKDIR /app
+
+# RUN npm install 
+
+# COPY package.json package.json
+# COPY package-lock.json package-lock.json
+
+# COPY index.js index.js
+
+# CMD [ "node", "index.js" ]
+
+
+# # # # More optimized version: 
+
 FROM node
 
 WORKDIR /app
 
-RUN npm install 
+RUN npm install
 
-COPY package.json package.json
-COPY package-lock.json package-lock.json
-
-COPY index.js index.js
+COPY package*.json .
+COPY . . 
 
 CMD [ "node", "index.js" ]
